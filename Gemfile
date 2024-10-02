@@ -17,8 +17,11 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Handle user authentication
 gem "devise"
-# Add Devise Gem for Authentication
+
+# Integrate OpenAI API
+gem 'ruby-openai'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -47,6 +50,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+   # Add RSpec for testing
+   gem 'rspec-rails', '~> 5.0.0' # <-- Add this line here
 end
 
 group :development do
@@ -59,3 +65,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Allows each user to have their own environmental variables stored in a local .env file
+gem 'dotenv-rails', groups: [:development, :test]
+
